@@ -10,7 +10,7 @@ body {
 }
 
 nav {
-    font-family: Ubuntu, sans-serif;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 nav ul {
@@ -39,16 +39,7 @@ nav ul li {
 }
 
 .container {
-    min-height: 70vh;
-    background-color: black;
-    color: white;
-    font-family: varela, sans-serif;
-    display: flex;
-    margin: 23px auto;
-    width: 70%;
-    border-radius: 12px;
-    padding: 34px;
-    background-image: url('bg.jpg');
+    min-height: 75vh;
 }
 
 .bottom {
@@ -60,15 +51,6 @@ nav ul li {
     justify-content: center;
     align-items: center;
     color: white;
-    flex-direction: column;
-}
-
-.icons {
-    margin-top: 14px;
-}
-
-.icons i {
-    cursor: pointer;
 }
 
 #myProgressBar {
