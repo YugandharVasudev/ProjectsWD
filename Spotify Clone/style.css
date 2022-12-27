@@ -42,7 +42,7 @@ nav ul li {
     min-height: 70vh;
     background-color: black;
     color: white;
-    font-family: varela, sans-serif;
+    font-family: 'Varela Round', sans-serif;
     display: flex;
     margin: 23px auto;
     width: 70%;
@@ -73,6 +73,7 @@ nav ul li {
 
 #myProgressBar {
     width: 80vw;
+    cursor: pointer;
 }
 
 .songItemContainer {
@@ -102,4 +103,15 @@ nav ul li {
 
 .timestamp i {
     cursor: pointer;
+}
+
+.songInfo {
+    position: absolute;
+    left: 10vw;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.songInfo img {
+    opacity: 0;
+    transition: opacity is ease-in;
 }
