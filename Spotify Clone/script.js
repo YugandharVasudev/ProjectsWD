@@ -17,13 +17,16 @@ let songs = [
     {songName: "Salam-e-Ishq", filePath: "songs/7.mp3", coverPath: "covers/7.jpg"},
     {songName: "Salam-e-Ishq", filePath: "songs/8.mp3", coverPath: "covers/8.jpg"},
     {songName: "Salam-e-Ishq", filePath: "songs/9.mp3", coverPath: "covers/9.jpg"},
+    {songName: "Salam-e-Ishq", filePath: "songs/10.mp3", coverPath: "covers/10.jpg"},
 ]
 
-songs.forEach((element, i) =>{
-    console.log(element, i)
+songItems.forEach((element, i) =>{
+    // console.log(element, i)
     element.getElementsByTagName("img")[0].src = songs[i].coverPath;
-    element.getElementsByTagName("songName")[0].innerText = songs[i].songName;
+    element.getElementsByClassName("songName")[0].innerText = songs[i].songName;
 })
+
+
 // audioElement.play();
 
 // Handle play/pause click
@@ -43,8 +46,8 @@ masterPlay.addEventListener('click', ()=>{
 })
 
 // Listen to Events
-myProgressBar.addEventListener('timeupdate', ()=>{
-    // console.log('timeupdate');
+audioElement.addEventListener('timeupdate', ()=>{
+    console.log('timeupdate');
     // Update Seekbar
     progress = parseInt((audioElement.currentTime/audioElement.duration)* 100);
     // console.log(progress);
@@ -55,3 +58,17 @@ myProgressBar.addEventListener('change', ()=>{
     audioElement.currentTime = myProgressBar.value * audioElement.duration/100;
 })
 
+const makeAllPlays = ()=>{
+    Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
+        element.classList.add('fa-pause.circle');
+    })
+}
+
+document.getElementsByClassName('songItemPlay').forEach((element)=>{
+    element.addEventListener('click', (e)=>{
+        console.log(e.target);
+        makeAllPlays();
+        e.target.classList.remove('fa-play-circle');
+        e.target.classList.add('fa-pause-circle');
+    })
+})
